@@ -6,15 +6,14 @@ public class Cliente {
 	private String id;
 	  private String nombre;
 	  private String direccion;
-	  private int CantProyectos = 0;
 	  private ArrayList<Proyecto> misProyectos;
 	  
-	public Cliente(String id, String nombre, String direccion, int cantProyectos) {
+	public Cliente(String id, String nombre, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
-		CantProyectos = cantProyectos;
+	
 		
 	}
 
@@ -42,14 +41,7 @@ public class Cliente {
 		this.direccion = direccion;
 	}
 
-	public int getCantProyectos() {
-		return CantProyectos;
-	}
-
-	public void setCantProyectos(int cantProyectos) {
-		CantProyectos = cantProyectos;
-	}
-
+	
 	public ArrayList<Proyecto> getMisProyectos() {
 		return misProyectos;
 	}
