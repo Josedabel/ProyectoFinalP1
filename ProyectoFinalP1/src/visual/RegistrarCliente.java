@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.UIManager;
 
 public class RegistrarCliente extends JDialog {
 
@@ -40,7 +41,7 @@ public class RegistrarCliente extends JDialog {
 		setTitle("Registrar Cliente");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(Color.WHITE);
+		contentPanel.setBackground(UIManager.getColor("Button.background"));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
@@ -100,6 +101,10 @@ public class RegistrarCliente extends JDialog {
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 27, 10, -10);
 		contentPanel.add(panel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 6, 414, 188);
+		contentPanel.add(panel_1);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

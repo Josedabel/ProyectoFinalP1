@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
+import javax.swing.UIManager;
 
 public class ListarClientes extends JDialog {
 
@@ -47,7 +48,7 @@ public class ListarClientes extends JDialog {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setForeground(new Color(0, 0, 0));
-		contentPanel.setBackground(Color.WHITE);
+		contentPanel.setBackground(UIManager.getColor("Button.background"));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		JScrollPane scrollPane = new JScrollPane();
@@ -55,22 +56,23 @@ public class ListarClientes extends JDialog {
 		JButton btnModificar = new JButton("Modificar");
 		GroupLayout gl_contentPanel = new GroupLayout(contentPanel);
 		gl_contentPanel.setHorizontalGroup(
-			gl_contentPanel.createParallelGroup(Alignment.LEADING)
+			gl_contentPanel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(102, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
-					.addContainerGap(335, Short.MAX_VALUE)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 328, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
 					.addComponent(btnModificar))
 		);
 		gl_contentPanel.setVerticalGroup(
 			gl_contentPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPanel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnModificar)
+					.addGroup(gl_contentPanel.createParallelGroup(Alignment.TRAILING, false)
+						.addGroup(Alignment.LEADING, gl_contentPanel.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(scrollPane, 0, 0, Short.MAX_VALUE))
+						.addGroup(Alignment.LEADING, gl_contentPanel.createSequentialGroup()
+							.addGap(167)
+							.addComponent(btnModificar)))
 					.addContainerGap(28, Short.MAX_VALUE))
 		);
 		
